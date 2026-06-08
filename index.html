@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Taban – Portfolio</title>
+  <meta name="description" content="DJ Taban – Afrobeats, Amapiano, Hip-Hop, R&B, Dancehall. Official DJ Portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Noto+Serif+Hebrew:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080808;
+      --card: #111111;
+      --card2: #181818;
+      --accent: #f5a623;
+      --accent2: #e05c00;
+      --text: #ffffff;
+      --muted: #888888;
+      --border: #242424;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-wrap { background: linear-gradient(135deg, #f5a623, #e05c00); border-radius: 8px; padding: 3px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-img { height: 52px; width: auto; object-fit: contain; border-radius: 6px; mix-blend-mode: multiply; display: block; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: 0.82rem; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-book {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000; font-weight: 700; font-size: 0.82rem;
+      padding: 8px 18px; border-radius: 8px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 120px 24px 100px;
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center 20%;
+      background-repeat: no-repeat;
+      filter: brightness(0.55) saturate(1.1);
+      z-index: 0;
+      transform: scale(1.0);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.15) 0%,
+        rgba(8,8,8,0.55) 60%,
+        rgba(8,8,8,0.98) 100%
+      );
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,166,35,0.12);
+      border: 1px solid rgba(245,166,35,0.3);
+      color: var(--accent);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .hero-avatar { font-size: 6rem; margin-bottom: 20px; line-height: 1; }
+    .dj-name {
+      font-size: 3.5rem; font-weight: 800; letter-spacing: -2px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 14px; line-height: 1.1;
+    }
+    .dj-tagline { font-size: 1.05rem; color: var(--muted); margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; margin-bottom: 40px; }
+    .hero-tag {
+      background: rgba(245,166,35,0.1); color: var(--accent);
+      border: 1px solid rgba(245,166,35,0.25);
+      padding: 5px 13px; border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+    }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000; font-weight: 700; padding: 14px 32px;
+      border-radius: 10px; font-size: 0.95rem; transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,166,35,0.3); }
+    .btn-secondary {
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border); padding: 14px 32px;
+      border-radius: 10px; font-size: 0.95rem; transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── LAYOUT ── */
+    main { max-width: 900px; margin: 0 auto; padding: 48px 24px 100px; display: flex; flex-direction: column; gap: 28px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; }
+    .section-title {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px;
+      color: var(--accent); margin-bottom: 24px; font-weight: 700;
+    }
+
+    /* ── STATS ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 16px; text-align: center; }
+    .stat-number { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ── JOURNEY ── */
+    .journey-body { color: var(--muted); line-height: 1.9; font-size: 0.95rem; }
+    .journey-body p + p { margin-top: 16px; }
+    .journey-quote {
+      border-left: 3px solid var(--accent);
+      padding: 14px 20px;
+      background: rgba(245,166,35,0.06);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--text);
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+
+    /* ── UPCOMING GIGS ── */
+    .gig-list { display: flex; flex-direction: column; gap: 2px; }
+    .gig-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 8px;
+      border-bottom: 1px solid var(--border);
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .gig-row:last-child { border-bottom: none; }
+    .gig-row:hover { background: rgba(255,255,255,0.02); }
+    .gig-date-block { text-align: center; background: var(--card2); border-radius: 8px; padding: 8px 6px; }
+    .gig-day { font-size: 1.3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .gig-month { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+    .gig-info {}
+    .gig-venue { font-weight: 700; font-size: 0.95rem; }
+    .gig-meta { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+    .gig-status {
+      font-size: 0.7rem; font-weight: 700; padding: 4px 10px;
+      border-radius: 20px; white-space: nowrap;
+    }
+    .status-confirmed { background: rgba(46,204,113,0.12); color: #2ecc71; }
+    .status-available { background: rgba(245,166,35,0.12); color: var(--accent); }
+    .no-gigs { color: var(--muted); font-size: 0.9rem; font-style: italic; }
+
+    /* ── GENRES ── */
+    .genre-category-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent); font-weight: 700; margin: 20px 0 10px; }
+    .genre-category-label:first-of-type { margin-top: 0; }
+    .genre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .genre-item { display: flex; align-items: flex-start; gap: 12px; background: var(--card2); padding: 16px; border-radius: 10px; border: 1px solid var(--border); }
+    .genre-icon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; }
+    .genre-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; }
+    .genre-desc { font-size: 0.76rem; color: var(--muted); }
+
+    /* ── GEAR ── */
+    .gear-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .gear-item {
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 16px; text-align: center;
+    }
+    .gear-icon { font-size: 2rem; margin-bottom: 10px; }
+    .gear-category { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+    .gear-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+    .gear-detail { font-size: 0.75rem; color: var(--muted); }
+
+    /* ── YOUTUBE ── */
+    .yt-header {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;
+    }
+    .yt-brand { display: flex; align-items: center; gap: 12px; }
+    .yt-logo { font-size: 1.6rem; }
+    .yt-name { font-weight: 700; font-size: 0.92rem; }
+    .yt-handle { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+    .btn-yt { background: linear-gradient(135deg,#ff0000,#cc0000); color:#fff; font-weight:700; font-size:0.8rem; padding:9px 16px; border-radius:8px; text-decoration:none; white-space:nowrap; }
+    .btn-yt:hover { opacity: 0.85; }
+    .yt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .yt-thumb {
+      position: relative; display: block; border-radius: 10px; overflow: hidden;
+      background: #000; border: 1px solid var(--border); aspect-ratio: 16/9; cursor: pointer;
+    }
+    .yt-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.3s, opacity 0.3s; }
+    .yt-thumb:hover img { transform: scale(1.04); opacity: 0.75; }
+    .yt-play-btn { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+    .yt-play-icon {
+      width:58px; height:58px; background:rgba(255,0,0,0.88); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      transition: transform 0.2s; box-shadow:0 4px 20px rgba(0,0,0,0.5);
+    }
+    .yt-thumb:hover .yt-play-icon { transform: scale(1.12); background: #ff0000; }
+    .yt-play-icon::after { content:''; display:block; width:0; height:0; border-style:solid; border-width:10px 0 10px 18px; border-color:transparent transparent transparent #fff; margin-left:4px; }
+
+    /* ── MIXCLOUD ── */
+    .mc-header {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;
+    }
+    .mc-brand { display: flex; align-items: center; gap: 12px; }
+    .mc-logo { font-size: 1.6rem; }
+    .mc-name { font-weight: 700; font-size: 0.92rem; }
+    .mc-handle { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+    .btn-mc { background: linear-gradient(135deg,#52a0e4,#1c4e8a); color:#fff; font-weight:700; font-size:0.8rem; padding:9px 16px; border-radius:8px; white-space:nowrap; }
+    .btn-mc:hover { opacity: 0.85; }
+    .mix-list { display:flex; flex-direction:column; gap:0; }
+    .mix-item { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 4px 6px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .mix-item:first-of-type { border-top:none; }
+    .mix-info { flex:1; min-width:160px; }
+    .mix-title { font-weight:600; font-size:0.92rem; }
+    .mix-meta { font-size:0.78rem; color:var(--muted); margin-top:2px; }
+    .mix-link { display:inline-flex; align-items:center; gap:6px; background:rgba(82,160,228,0.12); color:#52a0e4; border:1px solid rgba(82,160,228,0.3); font-size:0.78rem; font-weight:600; padding:6px 12px; border-radius:8px; white-space:nowrap; }
+    .mix-link:hover { background:rgba(82,160,228,0.22); }
+    .mix-embed-wrap { background:#111; border-radius:8px; overflow:hidden; margin:5px 0 14px; border:1px solid var(--border); }
+    .mix-embed-wrap iframe { display:block; }
+
+    /* ── SOCIAL WALL ── */
+    .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .social-card {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 16px; text-align: center;
+      text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .social-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .social-icon { font-size: 2rem; }
+    .social-platform { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; }
+    .social-handle { font-size: 0.92rem; font-weight: 700; color: var(--accent); margin-top: 2px; }
+    .social-followers { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── AVAILABLE FOR ── */
+    .event-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .event-tag { background: var(--card2); border: 1px solid var(--border); padding: 8px 16px; border-radius: 8px; font-size: 0.84rem; }
+
+
+    /* ── VENUES ── */
+    .venue-list { display: flex; flex-direction: column; }
+    .venue-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .venue-item:last-child { border-bottom: none; }
+    .venue-name { font-size: 0.95rem; font-weight: 600; }
+    .venue-date {
+      font-size: 0.82rem; color: var(--accent); font-weight: 700;
+      background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.2);
+      padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+    }
+
+
+    /* ── VENUE MANAGER ── */
+    .venue-section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .venue-section-header .section-title { margin-bottom: 0; }
+    .btn-add-venue {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000; font-size: 1.3rem; font-weight: 700;
+      border: none; border-radius: 8px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.15s, box-shadow 0.2s;
+      flex-shrink: 0; line-height: 1;
+    }
+    .btn-add-venue:hover { transform: scale(1.1); box-shadow: 0 4px 16px rgba(245,166,35,0.4); }
+    .venue-add-form {
+      display: none;
+      background: var(--card2);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+      gap: 10px;
+      flex-direction: column;
+    }
+    .venue-add-form.open { display: flex; }
+    .venue-form-row { display: flex; gap: 10px; }
+    .venue-input {
+      flex: 1; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 7px; padding: 9px 12px;
+      color: var(--text); font-size: 0.88rem; font-family: var(--font);
+    }
+    .venue-input:focus { outline: none; border-color: var(--accent); }
+    .venue-input::placeholder { color: #444; }
+    .venue-year-input { width: 90px; flex: none; }
+    .venue-form-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    .btn-venue-save {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000; font-weight: 700; border: none;
+      border-radius: 7px; padding: 8px 18px; cursor: pointer; font-size: 0.85rem;
+    }
+    .btn-venue-cancel {
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border); border-radius: 7px;
+      padding: 8px 14px; cursor: pointer; font-size: 0.85rem;
+    }
+    .btn-venue-cancel:hover { border-color: var(--muted); }
+    .venue-item { position: relative; }
+    .btn-venue-delete {
+      opacity: 0; background: transparent; border: none;
+      color: #e74c3c; cursor: pointer; font-size: 0.85rem;
+      padding: 4px 6px; border-radius: 4px;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+    .venue-item:hover .btn-venue-delete { opacity: 1; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .testimonial { background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .testimonial-text { font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-style: italic; margin-bottom: 12px; }
+    .testimonial-author { font-size: 0.8rem; font-weight: 700; }
+
+    /* ── CONTACT ── */
+    .contact-card { border-color: rgba(245,166,35,0.3); }
+    .contact-intro { color: var(--muted); margin-bottom: 24px; font-size: 0.92rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; background: var(--card2); padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); }
+    .contact-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .contact-value { font-size: 0.85rem; color: var(--accent); text-decoration: none; word-break: break-all; }
+    .contact-value:hover { opacity: 0.75; text-decoration: underline; }
+    .book-cta { margin-top: 24px; text-align: center; padding-top: 24px; border-top: 1px solid var(--border); }
+    .btn-book-cta {
+      display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000; font-weight: 800; font-size: 1.05rem;
+      padding: 18px 52px; border-radius: 12px;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-book-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(245,166,35,0.3); }
+
+
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switcher {
+      display: flex; align-items: center; gap: 4px;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 3px;
+    }
+    .lang-btn {
+      background: transparent; border: none; color: var(--muted);
+      font-size: 0.75rem; font-weight: 700; padding: 5px 10px;
+      border-radius: 7px; cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap; font-family: var(--font); letter-spacing: 0.3px;
+    }
+    .lang-btn:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .lang-btn.active { background: var(--accent); color: #000; }
+
+    /* ── RTL SUPPORT ── */
+    [dir="rtl"] .nav-links { flex-direction: row-reverse; }
+    [dir="rtl"] .journey-quote { border-left: none; border-right: 3px solid var(--accent); border-radius: 8px 0 0 8px; }
+    [dir="rtl"] main, [dir="rtl"] nav, [dir="rtl"] .hero { direction: rtl; }
+    [dir="rtl"] .hero-actions { flex-direction: row-reverse; }
+    [dir="rtl"] .mix-item { flex-direction: row-reverse; }
+    [dir="rtl"] .genre-item { flex-direction: row-reverse; text-align: right; }
+    [dir="rtl"] .contact-item { flex-direction: row-reverse; text-align: right; }
+    html[lang="ar"] body { font-family: 'Noto Kufi Arabic', sans-serif !important; }
+    html[lang="he"] body { font-family: 'Noto Serif Hebrew', sans-serif !important; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 40px 24px; color: #333; font-size: 0.78rem; border-top: 1px solid var(--border); line-height: 2.2; }
+    footer a { color: #555; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .dj-name { font-size: 2.2rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .genre-grid, .testimonial-grid, .contact-grid { grid-template-columns: 1fr; }
+      .gear-grid { grid-template-columns: 1fr 1fr; }
+      .social-grid { grid-template-columns: 1fr 1fr; }
+      .yt-grid { grid-template-columns: 1fr; }
+      .card { padding: 24px 18px; }
+      .hero { padding: 60px 18px 48px; }
+      .nav-links { display: none; }
+      .gig-row { grid-template-columns: 48px 1fr; }
+      .gig-status { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-logo"><div class="nav-logo-wrap"><img src="logo.jpeg" alt="DJ Taban" class="nav-logo-img" /></div></div>
+    <div class="nav-links">
+      <a href="#journey" data-i18n="nav_story">Story</a>
+      <!-- <a href="#gigs" data-i18n="nav_gigs">Gigs</a> -->
+      <a href="#music" data-i18n="nav_music">Music</a>
+      <a href="#gear" data-i18n="nav_gear">Gear</a>
+      <a href="#social" data-i18n="nav_socials">Socials</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')" title="English UK">🇬🇧 EN</button>
+      <button class="lang-btn" onclick="setLang('ar')" title="Arabic">🇸🇦 AR</button>
+      <button class="lang-btn" onclick="setLang('he')" title="Hebrew">🇮🇱 HE</button>
+    </div>
+    <a href="mailto:tabanodiel1997@gmail.com?subject=DJ Booking Inquiry&body=Hi DJ Taban, I'd like to book you for an event." class="btn-primary nav-book" data-i18n="nav_book">📩 Book Me</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+    <!-- <div class="hero-badge">Official DJ Portfolio</div> -->
+    <h1 class="dj-name">DJ Taban</h1>
+    <p class="dj-tagline" data-i18n="hero_tagline">Afrobeats · Amapiano · Hip-Hop · R&amp;B · Dancehall · Latin — Moving crowds worldwide</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🇳🇬 Afrobeats</span>
+      <span class="hero-tag">🇿🇦 Amapiano</span>
+      <span class="hero-tag">🌍 African Mix</span>
+      <span class="hero-tag">🎤 Hip-Hop</span>
+      <span class="hero-tag">🎵 R&amp;B &amp; Soul</span>
+      <span class="hero-tag">🌴 Dancehall</span>
+      <span class="hero-tag">🌴 Latin</span>
+      <span class="hero-tag">Live Events</span>
+      <span class="hero-tag">Clubs &amp; Festivals</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary" data-i18n="hero_book">📩 Book Me</a>
+      <a href="#music" class="btn-secondary" data-i18n="hero_mixes">🎧 Hear My Mixes</a>
+    </div>
+    </div><!-- end hero-content -->
+  </section>
+
+  <main>
+
+    <!-- ── STATS ── -->
+    <section class="stats-grid">
+      <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label" data-i18n="stat_events">Events Played</div></div>
+      <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label" data-i18n="stat_years">Years Active</div></div>
+      <div class="stat-card"><div class="stat-number">10K+</div><div class="stat-label" data-i18n="stat_followers">Social Followers</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label" data-i18n="stat_countries">Countries</div></div>
+    </section>
+
+    <!-- ── MY JOURNEY ── -->
+    <section class="card" id="journey">
+      <h2 class="section-title" data-i18n="title_journey">My Journey</h2>
+      <div class="journey-body">
+        <p>
+          <span data-i18n="journey_p1">Music has always been the language I understood best. Growing up surrounded by the sounds of Africa — the rhythm of Afrobeats, the deep groove of Amapiano, the energy of Hip-Hop — DJing wasn't a career choice. It was inevitable.</span>
+        </p>
+        <div class="journey-quote">
+          <span data-i18n="journey_quote">"I don't just play music. I read the room, feel the crowd, and take them on a journey they didn't know they needed."</span>
+        </div>
+        <p>
+          <span data-i18n="journey_p2">I started behind the decks with nothing but a laptop, a controller, and an obsession with music. Event by event, set by set, I developed my style — a sound that crosses genres and borders, built on the foundation of African rhythm but fluent in every language the dance floor speaks.</span>
+        </p>
+        <p>
+          <span data-i18n="journey_p3">Today I play clubs, weddings, rooftop events, festivals, and private gatherings across Tel Aviv and beyond. Every set is different. Every crowd teaches me something new. That's what keeps this alive.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── UPCOMING GIGS ── -->
+    <!-- <section class="card" id="gigs">
+      <h2 class="section-title">Upcoming Gigs</h2>
+      <div class="gig-list">
+        <div class="gig-row">
+          <div class="gig-date-block"><div class="gig-day">TBA</div><div class="gig-month">2026</div></div>
+          <div class="gig-info">
+            <div class="gig-venue">Update this with your next gig</div>
+            <div class="gig-meta">📍 Venue · City · Event Type</div>
+          </div>
+          <span class="gig-status status-available">Available</span>
+        </div>
+      </div>
+      <p style="font-size:0.78rem; color:#444; margin-top:16px; font-style:italic;">
+        ✏️ To edit: open this file in VSCode, find the "Upcoming Gigs" section and update the date, venue, city, and status for each row.
+      </p>
+    </section> -->
+
+    <!-- ── MUSIC SPECIALTIES ── -->
+    <section class="card" id="genres">
+      <h2 class="section-title" data-i18n="title_music">Music Specialties</h2>
+      <p class="genre-category-label">🌍 African</p>
+      <div class="genre-grid">
+        <div class="genre-item"><span class="genre-icon">🔥</span><div><div class="genre-name">Afrobeats</div><div class="genre-desc">Burna Boy, Wizkid, Davido, Rema, Asake</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🎹</span><div><div class="genre-name">Amapiano</div><div class="genre-desc">Kabza De Small, DJ Maphorisa, Focalistic</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🎧</span><div><div class="genre-name">Afro House</div><div class="genre-desc">Black Coffee, Shimza, Black Motion</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🌍</span><div><div class="genre-name">African Mix</div><div class="genre-desc">Pan-African sounds, Afro-Pop, Highlife</div></div></div>
+      </div>
+      <p class="genre-category-label">🎤 Hip-Hop</p>
+      <div class="genre-grid">
+        <div class="genre-item"><span class="genre-icon">🔫</span><div><div class="genre-name">Trap</div><div class="genre-desc">Travis Scott, Future, Migos, Post Malone</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🏆</span><div><div class="genre-name">Old School / Golden Age</div><div class="genre-desc">2Pac, Biggie, Eminem, Dr. Dre, OutKast</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🥊</span><div><div class="genre-name">Drill</div><div class="genre-desc">Pop Smoke, Central Cee, Juice WRLD</div></div></div>
+        <div class="genre-item"><span class="genre-icon">✊</span><div><div class="genre-name">Conscious Hip-Hop</div><div class="genre-desc">Kendrick Lamar, J. Cole, Common, Kanye</div></div></div>
+      </div>
+      <p class="genre-category-label">🎵 R&amp;B &amp; Soul</p>
+      <div class="genre-grid">
+        <div class="genre-item"><span class="genre-icon">💫</span><div><div class="genre-name">Contemporary R&amp;B</div><div class="genre-desc">Beyoncé, H.E.R., Silk Sonic, Alicia Keys</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🌙</span><div><div class="genre-name">Neo-Soul</div><div class="genre-desc">Erykah Badu, D'Angelo, Jill Scott</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🕯️</span><div><div class="genre-name">Quiet Storm</div><div class="genre-desc">Sade, Luther Vandross, Marvin Gaye</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🎙️</span><div><div class="genre-name">Motown</div><div class="genre-desc">Jackson 5, Temptations, Stevie Wonder</div></div></div>
+      </div>
+      <p class="genre-category-label">🌴 Reggae &amp; Latin</p>
+      <div class="genre-grid">
+        <div class="genre-item"><span class="genre-icon">🔊</span><div><div class="genre-name">Reggaeton</div><div class="genre-desc">Daddy Yankee, Bad Bunny, J Balvin</div></div></div>
+        <div class="genre-item"><span class="genre-icon">💃</span><div><div class="genre-name">Salsa</div><div class="genre-desc">Marc Anthony, Celia Cruz, Rubén Blades</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🥁</span><div><div class="genre-name">Samba</div><div class="genre-desc">Sergio Mendes, João Gilberto</div></div></div>
+        <div class="genre-item"><span class="genre-icon">🇯🇲</span><div><div class="genre-name">Dancehall</div><div class="genre-desc">Sean Paul, Vybz Kartel, Rihanna</div></div></div>
+      </div>
+    </section>
+
+    <!-- ── AVAILABLE FOR ── -->
+    <section class="card">
+      <h2 class="section-title" data-i18n="title_available">Available For</h2>
+      <div class="event-tags">
+        <span class="event-tag">🎉 Club Nights</span>
+        <span class="event-tag">💒 Weddings</span>
+        <span class="event-tag">🎪 Festivals</span>
+        <span class="event-tag">🏢 Corporate Events</span>
+        <span class="event-tag">🎂 Private Parties</span>
+        <span class="event-tag">🏙️ Rooftop Events</span>
+        <span class="event-tag">📺 Live Streams</span>
+        <span class="event-tag">🎓 University Events</span>
+      </div>
+    </section>
+
+    <!-- ── YOUTUBE ── -->
+    <section class="card" id="music">
+      <h2 class="section-title" data-i18n="title_watch">Watch My Sets</h2>
+      <div class="yt-header">
+        <div class="yt-brand">
+          <span class="yt-logo">▶️</span>
+          <div><div class="yt-name">DJ Taban on YouTube</div><div class="yt-handle">youtube.com/@tabanodiel</div></div>
+        </div>
+        <a href="https://www.youtube.com/@tabanodiel" target="_blank" class="btn-yt">Open Channel ↗</a>
+      </div>
+      <div class="yt-grid">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=tyeaY0gemHw" target="_blank">
+          <img src="https://img.youtube.com/vi/tyeaY0gemHw/hqdefault.jpg" alt="DJ Taban Mix 1" />
+          <div class="yt-play-btn"><div class="yt-play-icon"></div></div>
+        </a>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=69wZ_-Dc_3o" target="_blank">
+          <img src="https://img.youtube.com/vi/69wZ_-Dc_3o/hqdefault.jpg" alt="DJ Taban Mix 2" />
+          <div class="yt-play-btn"><div class="yt-play-icon"></div></div>
+        </a>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=N-Z5PpPHJC8" target="_blank">
+          <img src="https://img.youtube.com/vi/N-Z5PpPHJC8/hqdefault.jpg" alt="DJ Taban Mix 3" />
+          <div class="yt-play-btn"><div class="yt-play-icon"></div></div>
+        </a>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=qAxpermQKTc" target="_blank">
+          <img src="https://img.youtube.com/vi/qAxpermQKTc/hqdefault.jpg" alt="DJ Taban Mix 4" />
+          <div class="yt-play-btn"><div class="yt-play-icon"></div></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── MIXCLOUD ── -->
+    <section class="card">
+      <h2 class="section-title" data-i18n="title_mixes">Listen to My Mixes</h2>
+      <div class="mc-header">
+        <div class="mc-brand">
+          <span class="mc-logo">🎧</span>
+          <div><div class="mc-name">DJ Taban on Mixcloud</div><div class="mc-handle">mixcloud.com/tabanodiel</div></div>
+        </div>
+        <a href="https://www.mixcloud.com/tabanodiel/" target="_blank" class="btn-mc">Open Full Profile ↗</a>
+      </div>
+      <div class="mix-list">
+        <div class="mix-item">
+          <div class="mix-info"><div class="mix-title">Dancehall Mixtape</div><div class="mix-meta">DJ Taban · Dancehall</div></div>
+          <a class="mix-link" href="https://www.mixcloud.com/tabanodiel/dancehall-mixtape/" target="_blank">▶ Listen</a>
+        </div>
+        <div class="mix-embed-wrap">
+          <iframe width="100%" height="60" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Ftabanodiel%2Fdancehall-mixtape%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
+        </div>
+        <div class="mix-item">
+          <div class="mix-info"><div class="mix-title">Afrobeats Chill Mix</div><div class="mix-meta">DJ Taban · Afrobeats</div></div>
+          <a class="mix-link" href="https://www.mixcloud.com/tabanodiel/afrobeats-chill-mix-by-dj-taban/" target="_blank">▶ Listen</a>
+        </div>
+        <div class="mix-embed-wrap">
+          <iframe width="100%" height="60" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Ftabanodiel%2Fafrobeats-chill-mix-by-dj-taban%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
+        </div>
+        <div class="mix-item">
+          <div class="mix-info"><div class="mix-title">R&amp;B · Afrobeats · Dancehall Mix</div><div class="mix-meta">DJ Taban · Multi-genre</div></div>
+          <a class="mix-link" href="https://www.mixcloud.com/tabanodiel/rb-afrobeats-dancehall-mix/" target="_blank">▶ Listen</a>
+        </div>
+        <div class="mix-embed-wrap">
+          <iframe width="100%" height="60" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Ftabanodiel%2Frb-afrobeats-dancehall-mix%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
+        </div>
+        <div class="mix-item">
+          <div class="mix-info"><div class="mix-title">Best of R&amp;B</div><div class="mix-meta">DJ Taban · R&amp;B</div></div>
+          <a class="mix-link" href="https://www.mixcloud.com/tabanodiel/best-of-rb-dj-taban/" target="_blank">▶ Listen</a>
+        </div>
+        <div class="mix-embed-wrap">
+          <iframe width="100%" height="60" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Ftabanodiel%2Fbest-of-rb-dj-taban%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GEAR & SETUP ── -->
+    <section class="card" id="gear">
+      <h2 class="section-title" data-i18n="title_gear">Gear &amp; Setup</h2>
+      <div class="gear-grid">
+        <div class="gear-item">
+          <div class="gear-icon">🎛️</div>
+          <div class="gear-category">Controller / CDJ</div>
+          <div class="gear-name">Pioneer DJ</div>
+          <div class="gear-detail">CDJ-2000NXS2 · Club Standard</div>
+        </div>
+        <div class="gear-item">
+          <div class="gear-icon">🎚️</div>
+          <div class="gear-category">Mixer</div>
+          <div class="gear-name">DJM-900NXS2</div>
+          <div class="gear-detail">4-channel · Pioneer Pro</div>
+        </div>
+        <div class="gear-item">
+          <div class="gear-icon">💻</div>
+          <div class="gear-category">Software</div>
+          <div class="gear-name">Rekordbox</div>
+          <div class="gear-detail">Library management &amp; prep</div>
+        </div>
+        <div class="gear-item">
+          <div class="gear-icon">🎧</div>
+          <div class="gear-category">Headphones</div>
+          <div class="gear-name">HDJ-X10</div>
+          <div class="gear-detail">Pioneer DJ · Pro monitoring</div>
+        </div>
+        <div class="gear-item">
+          <div class="gear-icon">🔊</div>
+          <div class="gear-category">Speakers</div>
+          <div class="gear-name">QSC / Venue System</div>
+          <div class="gear-detail">Works with any PA setup</div>
+        </div>
+        <div class="gear-item">
+          <div class="gear-icon">💾</div>
+          <div class="gear-category">Library</div>
+          <div class="gear-name">500+ Tracks</div>
+          <div class="gear-detail">Tagged, BPM-analyzed, organized</div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem; color:#444; margin-top:16px; font-style:italic;">
+        ✏️ Edit gear details in VSCode — find the "Gear &amp; Setup" section and update each card.
+      </p>
+    </section>
+
+    <!-- ── SOCIAL WALL ── -->
+    <section class="card" id="social">
+      <h2 class="section-title" data-i18n="title_social">Find Me Online</h2>
+      <div class="social-grid">
+        <a class="social-card" href="https://www.instagram.com/taban.odiel" target="_blank">
+          <span class="social-icon">📸</span>
+          <span class="social-platform">Instagram</span>
+          <span class="social-handle">@taban.odiel</span>
+          <span class="social-followers">Follow for live moments &amp; reels</span>
+        </a>
+        <a class="social-card" href="https://www.youtube.com/@tabanodiel" target="_blank">
+          <span class="social-icon">▶️</span>
+          <span class="social-platform">YouTube</span>
+          <span class="social-handle">@tabanodiel</span>
+          <span class="social-followers">Full DJ sets &amp; mixes</span>
+        </a>
+        <a class="social-card" href="https://www.mixcloud.com/tabanodiel/" target="_blank">
+          <span class="social-icon">🎧</span>
+          <span class="social-platform">Mixcloud</span>
+          <span class="social-handle">tabanodiel</span>
+          <span class="social-followers">Stream all mixes</span>
+        </a>
+      </div>
+    </section>
+    
+
+
+    <!-- ── PAST VENUES ── -->
+    <section class="card" id="venues">
+      <div class="venue-section-header">
+        <h2 class="section-title">Past Venues &amp; Events</h2>
+        <button class="btn-add-venue" onclick="openVenueForm()" title="Add venue">+</button>
+      </div>
+
+      <!-- Add form (hidden by default) -->
+      <div class="venue-add-form" id="venueAddForm">
+        <div class="venue-form-row">
+          <input type="text" class="venue-input" id="venueNameInput" placeholder="Venue or Event name (e.g. Club Lagos – Tel Aviv)" />
+          <input type="text" class="venue-input venue-year-input" id="venueYearInput" placeholder="Year" maxlength="4" />
+        </div>
+        <div class="venue-form-actions">
+          <button class="btn-venue-cancel" onclick="closeVenueForm()">Cancel</button>
+          <button class="btn-venue-save" onclick="saveVenue()">✓ Save</button>
+        </div>
+      </div>
+
+      <div class="venue-list" id="venueList"></div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="card">
+      <h2 class="section-title" data-i18n="title_testimonials">What People Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p class="testimonial-text">"The crowd was going crazy from start to finish. Best DJ we've ever had at our venue. He reads the room perfectly."</p>
+          <div class="testimonial-author">— Club Promoter, Tel Aviv</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"He made our wedding the most unforgettable night. Everyone was on the dance floor. We'll hire him again."</p>
+          <div class="testimonial-author">— Wedding Client</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BOOK ME ── -->
+    <section class="card contact-card" id="contact">
+      <h2 class="section-title" data-i18n="title_contact">Get In Touch</h2>
+      <p class="contact-intro">Available for bookings . Whether it's a club night, wedding, festival or private event — let's talk.</p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <a href="mailto:tabanodiel1997@gmail.com" class="contact-value">tabanodiel1997@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <a href="tel:+972535533960" class="contact-value">+972 535 533 960</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📸</span>
+          <a href="https://www.instagram.com/taban.odiel" target="_blank" class="contact-value">@taban.odiel</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🎧</span>
+          <a href="https://www.mixcloud.com/tabanodiel/" target="_blank" class="contact-value">mixcloud.com/tabanodiel</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">▶️</span>
+          <a href="https://www.youtube.com/@tabanodiel" target="_blank" class="contact-value">youtube.com/@tabanodiel</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💬</span>
+          <a href="https://wa.me/972535533960?text=Hi%20DJ%20Taban%2C%20I%27d%20like%20to%20book%20you%20for%20an%20event." target="_blank" class="contact-value">WhatsApp: +972 535 533 960</a>
+        </div>
+      </div>
+      <div class="book-cta">
+        <a href="mailto:tabanodiel1997@gmail.com?subject=Booking Inquiry – DJ Taban&body=Hi DJ Taban, I'd like to book you for an event. Please let me know your availability and rates."
+           class="btn-book-cta" data-i18n="contact_cta">📩 Send Booking Request</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>DJ Taban · Official Portfolio · © 2026</p>
+    <p>
+      <a href="mailto:tabanodiel1997@gmail.com">tabanodiel1997@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="tel:+972535533960">+972 535 533 960</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.instagram.com/taban.odiel" target="_blank">Instagram</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.youtube.com/@tabanodiel" target="_blank">YouTube</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.mixcloud.com/tabanodiel/" target="_blank">Mixcloud</a>
+    </p>
+  </footer>
+
+
+  <script>
+  // ── DropSet Portfolio – Language System ──────────────────────────
+  const translations = {
+    en: {
+      // Nav
+      nav_story: "Story", nav_gigs: "Gigs", nav_music: "Music",
+      nav_gear: "Gear", nav_socials: "Socials", nav_contact: "Contact",
+      nav_book: "📩 Book Me",
+      // Hero
+      hero_tagline: "Afrobeats · Amapiano · Hip-Hop · R&B · Dancehall · Latin — Moving crowds worldwide",
+      hero_book: "📩 Book Me", hero_mixes: "🎧 Hear My Mixes",
+      // Stats
+      stat_events: "Events Played", stat_years: "Years Active",
+      stat_followers: "Social Followers", stat_countries: "Countries",
+      // Section titles
+      title_journey: "My Journey", title_music: "Music Specialties",
+      title_available: "Available For", title_watch: "Watch My Sets",
+      title_mixes: "Listen to My Mixes", title_gear: "Gear & Setup",
+      title_social: "Find Me Online", title_testimonials: "What People Say",
+      title_contact: "Get In Touch",
+      // Journey
+      journey_p1: "Music has always been the language I understood best. Growing up surrounded by the sounds of Africa — the rhythm of Afrobeats, the deep groove of Amapiano, the energy of Hip-Hop — DJing wasn't a career choice. It was inevitable.",
+      journey_quote: "\"I don't just play music. I read the room, feel the crowd, and take them on a journey they didn't know they needed.\"",
+      journey_p2: "I started behind the decks with nothing but a laptop, a controller, and an obsession with music. Event by event, set by set, I developed my style — a sound that crosses genres and borders, built on the foundation of African rhythm but fluent in every language the dance floor speaks.",
+      journey_p3: "Today I play clubs, weddings, rooftop events, festivals, and private gatherings across Tel Aviv and beyond. Every set is different. Every crowd teaches me something new. That's what keeps this alive.",
+      // Contact
+      contact_intro: "Available for bookings worldwide. Whether it's a club night, wedding, festival or private event — let's talk.",
+      contact_cta: "📩 Send Booking Request",
+    },
+
+    ar: {
+      // Nav
+      nav_story: "قصتي", nav_gigs: "الحفلات", nav_music: "الموسيقى",
+      nav_gear: "المعدات", nav_socials: "التواصل", nav_contact: "تواصل",
+      nav_book: "📩 احجزني",
+      // Hero
+      hero_tagline: "أفروبيتس · أماپيانو · هيب هوب · R&B · دانسهول · لاتين — أحرّك الجماهير حول العالم",
+      hero_book: "📩 احجزني", hero_mixes: "🎧 استمع للمكسات",
+      // Stats
+      stat_events: "حفلات", stat_years: "سنوات خبرة",
+      stat_followers: "متابعون", stat_countries: "دول",
+      // Section titles
+      title_journey: "مسيرتي", title_music: "التخصصات الموسيقية",
+      title_available: "متاح لـ", title_watch: "شاهد السيتات",
+      title_mixes: "استمع للمكسات", title_gear: "المعدات والإعداد",
+      title_social: "تجدني على", title_testimonials: "ماذا يقولون",
+      title_contact: "تواصل معي",
+      // Journey
+      journey_p1: "الموسيقى كانت دائماً اللغة التي فهمتها أكثر من أي شيء آخر. نشأت محاطاً بأصوات أفريقيا — إيقاع الأفروبيتس، الأخدود العميق للأماپيانو، طاقة الهيب هوب — لم يكن دور الدي جي مجرد مسار مهني. كان أمراً حتمياً.",
+      journey_quote: "\"أنا لا أعزف الموسيقى فحسب. أقرأ الأجواء، أحسّ الجمهور، وآخذهم في رحلة لم يعرفوا أنهم بحاجة إليها.\"",
+      journey_p2: "بدأت خلف الطاولات بلا شيء سوى حاسوب محمول، جهاز تحكم، وهوس بالموسيقى. حفلة تلو حفلة، ست تلو ست، طوّرت أسلوبي الخاص — صوت يتجاوز الحدود والأجناس الموسيقية، مبني على أساس الإيقاع الأفريقي لكنه يتحدث كل لغات صالة الرقص.",
+      journey_p3: "اليوم أعزف في النوادي، حفلات الأعراس، الفعاليات الخاصة، المهرجانات والتجمعات في تل أبيب وخارجها. كل ست مختلف. كل جمهور يعلّمني شيئاً جديداً. هذا ما يبقي الجذوة مشتعلة.",
+      // Contact
+      contact_intro: "متاح للحجوزات حول العالم. سواء كانت حفلة نادٍ أو زفاف أو مهرجان أو فعالية خاصة — لنتحدث.",
+      contact_cta: "📩 أرسل طلب حجز",
+    },
+
+    he: {
+      // Nav
+      nav_story: "הסיפור שלי", nav_gigs: "הופעות", nav_music: "מוזיקה",
+      nav_gear: "ציוד", nav_socials: "רשתות", nav_contact: "צור קשר",
+      nav_book: "📩 הזמן אותי",
+      // Hero
+      hero_tagline: "אפרוביטס · אמפיאנו · היפ-הופ · R&B · דנסהול · לטינית — מניע קהלים ברחבי העולם",
+      hero_book: "📩 הזמן אותי", hero_mixes: "🎧 שמע את המיקסים שלי",
+      // Stats
+      stat_events: "הופעות", stat_years: "שנות ניסיון",
+      stat_followers: "עוקבים", stat_countries: "מדינות",
+      // Section titles
+      title_journey: "המסע שלי", title_music: "התמחויות מוזיקליות",
+      title_available: "זמין עבור", title_watch: "צפה בסטים שלי",
+      title_mixes: "האזן למיקסים שלי", title_gear: "ציוד והגדרות",
+      title_social: "מצא אותי ברשת", title_testimonials: "מה אנשים אומרים",
+      title_contact: "צור קשר",
+      // Journey
+      journey_p1: "מוזיקה תמיד הייתה השפה שהבנתי הכי טוב. גדלתי מוקף בצלילי אפריקה — הקצב של האפרוביטס, הגרוב העמוק של האמפיאנו, האנרגיה של ההיפ-הופ — להיות DJ לא היה בחירה מקצועית. זה היה בלתי נמנע.",
+      journey_quote: "\"אני לא רק מנגן מוזיקה. אני קורא את האווירה, מרגיש את הקהל, ולוקח אותם למסע שלא ידעו שהם צריכים.\"",
+      journey_p2: "התחלתי מאחורי הדקים עם כלום מלבד לפטופ, קונטרולר ואובססיה למוזיקה. אירוע אחרי אירוע, סט אחרי סט, פיתחתי את הסגנון שלי — צליל שחוצה ז'אנרים וגבולות, בנוי על היסוד של הקצב האפריקאי אבל שוטף בכל שפה שרצפת הריקוד מדברת.",
+      journey_p3: "היום אני מופיע במועדונים, חתונות, אירועי גג, פסטיבלים וכינוסים פרטיים בתל אביב ומחוצה לה. כל סט שונה. כל קהל מלמד אותי משהו חדש. זה מה שמחזיק את הלהבה דולקת.",
+      // Contact
+      contact_intro: "זמין להזמנות ברחבי העולם. בין אם מדובר במועדון, חתונה, פסטיבל או אירוע פרטי — בואו נדבר.",
+      contact_cta: "📩 שלח בקשת הזמנה",
+    }
+  };
+
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    const html = document.documentElement;
+
+    // Set HTML lang + dir attributes
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'en' ? 'ltr' : 'rtl');
+
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.onclick && btn.onclick.toString().includes("'" + lang + "'")) {
+        btn.classList.add('active');
+      }
+    });
+
+    // Fix nav-book button (it's an <a> not a button)
+    const navBook = document.querySelector('.nav-book');
+    if (navBook && t.nav_book) navBook.innerHTML = t.nav_book;
+
+    // Fix RTL journey quote border
+    const quote = document.querySelector('.journey-quote');
+    if (quote) {
+      if (lang !== 'en') {
+        quote.style.borderLeft = 'none';
+        quote.style.borderRight = '3px solid var(--accent)';
+        quote.style.borderRadius = '8px 0 0 8px';
+      } else {
+        quote.style.borderLeft = '3px solid var(--accent)';
+        quote.style.borderRight = 'none';
+        quote.style.borderRadius = '0 8px 8px 0';
+      }
+    }
+  }
+
+  // Fix active state detection for lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  </script>
+
+
+  <script>
+  // ── Venue Manager ──────────────────────────────────────────────
+  const VENUE_KEY = "dropset_venues";
+
+  const DEFAULT_VENUES = [
+    { name: "Club Lagos – Tel Aviv",      year: "2026" },
+    { name: "Afrobeat Festival – Tel Aviv", year: "2025" },
+    { name: "Private Event",              year: "2024" },
+    { name: "Private Event",              year: "2023" },
+    { name: "Private Event",              year: "2022" },
+    { name: "Rooftop Sessions – Tel Aviv", year: "2021" },
+  ];
+
+  function loadVenues() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(VENUE_KEY));
+      return saved || DEFAULT_VENUES;
+    } catch { return DEFAULT_VENUES; }
+  }
+
+  function saveVenues(venues) {
+    localStorage.setItem(VENUE_KEY, JSON.stringify(venues));
+  }
+
+  function renderVenues() {
+    const list = document.getElementById("venueList");
+    const venues = loadVenues();
+    list.innerHTML = venues.map((v, i) => `
+      <div class="venue-item">
+        <div class="venue-name">${escHtml(v.name)}</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="venue-date">${escHtml(v.year)}</div>
+          <button class="btn-venue-delete" onclick="deleteVenue(${i})" title="Remove">✕</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function openVenueForm() {
+    const form = document.getElementById("venueAddForm");
+    form.classList.add("open");
+    document.getElementById("venueNameInput").focus();
+  }
+
+  function closeVenueForm() {
+    document.getElementById("venueAddForm").classList.remove("open");
+    document.getElementById("venueNameInput").value = "";
+    document.getElementById("venueYearInput").value = "";
+  }
+
+  function saveVenue() {
+    const name = document.getElementById("venueNameInput").value.trim();
+    const year = document.getElementById("venueYearInput").value.trim();
+    if (!name) { document.getElementById("venueNameInput").focus(); return; }
+    const venues = loadVenues();
+    venues.unshift({ name, year: year || new Date().getFullYear().toString() });
+    saveVenues(venues);
+    renderVenues();
+    closeVenueForm();
+  }
+
+  function deleteVenue(index) {
+    const venues = loadVenues();
+    venues.splice(index, 1);
+    saveVenues(venues);
+    renderVenues();
+  }
+
+  // Save on Enter key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && document.getElementById("venueAddForm").classList.contains("open")) {
+      saveVenue();
+    }
+    if (e.key === "Escape" && document.getElementById("venueAddForm").classList.contains("open")) {
+      closeVenueForm();
+    }
+  });
+
+  // Init
+  renderVenues();
+  </script>
+
+</body>
+</html>
